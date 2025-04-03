@@ -16,7 +16,7 @@ public class Ronin extends Humain {
     }
     
     public void provoquer(Yakuza adversaire) {
-        int forceRonin = 2 * this.honneur; // La force du Ronin est 2 fois son honneur
+        int forceRonin = 2 * this.honneur;
         if (forceRonin >= adversaire.getReputation()) {
             gagner(adversaire);
         } else {
@@ -32,9 +32,10 @@ public class Ronin extends Humain {
     }
 
     private void perdre(Yakuza adversaire) {
-        this.perdreArgent(this.getArgent());
+    	int argentPerdu = this.getArgent();
+        this.perdreArgent(argentPerdu);
         this.honneur--;
-        adversaire.gagner(this.getArgent());
+        adversaire.gagner(argentPerdu);
         parler("J'ai perdu contre ce yakuza, mon honneur et ma bourse en ont pris un coup.");
     }
 }

@@ -18,10 +18,12 @@ public class Yakuza extends Humain {
     }
 
     public void perdre() {
-        this.perdreArgent(this.getArgent());
+        int argentPerdu = this.getArgent();
+        this.perdreArgent(argentPerdu);
         this.reputation--;
-        parler("J’ai perdu mon duel et mes " + this.getArgent() + " sous, snif... J'ai déshonoré le clan de " + this.clan + ".");
+        parler("J’ai perdu mon duel et mes " + argentPerdu + " sous, snif... J'ai déshonoré le clan de " + this.clan + ".");
     }
+
 
     public void gagner(int gain) {
         this.gagnerArgent(gain);
